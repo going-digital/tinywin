@@ -1,0 +1,2 @@
+#version 330 core
+in vec4 gl_FragCoord;out vec4 Color;uniform float iTime;void main(){vec2 s=gl_FragCoord.xy/800.,r=vec2(.5,.5);vec4 v=vec4(0);Color=vec4(0);for(int f=0;f<4;f++){vec2 i=vec2(sin(iTime*(float(f)*.132+.1672))*(.146+float(f)*.0132),sin(iTime+iTime*(.221+float(f)*.1822))*(.1131+float(f)*.0112))+r;float e=distance(i,s);vec3 C=vec3(sin(100.*e),sin(110.*e),sin(120.*e));C*=max(0.,1.-e*3.);Color+=vec4(C,0.);}}
